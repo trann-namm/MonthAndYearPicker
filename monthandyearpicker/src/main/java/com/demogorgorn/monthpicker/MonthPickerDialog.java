@@ -5,7 +5,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.res.Configuration;
 import android.support.annotation.IntRange;
-import android.support.v7.app.AlertDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +21,7 @@ import java.util.Locale;
 
 public class MonthPickerDialog extends AlertDialog implements OnClickListener, OnDateChangedListener {
     private final MonthPickerView _monthPicker;
+
     private final OnDateSetListener _callBack;
     private View view;
 
@@ -77,6 +78,7 @@ public class MonthPickerDialog extends AlertDialog implements OnClickListener, O
                               int monthOfYear) {
         super(context, theme);
         _callBack = callBack;
+
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(R.layout.month_picker_dialog, null);
